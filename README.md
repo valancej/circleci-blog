@@ -14,6 +14,6 @@ Continous Integration plays a critical role when we move to building container i
 
 One of the core pieces of CI is running tests automatically. When we build container images in a CI pipeline, we should employ a tool that is able to conduct the appropriate level of analysis on the build artifact. Anchore is a service that conducts static analysis on container images, and applies user-defined acceptable polices to allow automated container image validation and certification. This means that not only can Anchore users gain a deep insight into the OS and non-OS packages contain within an image, but they have the ability to create governence around the artifact and it's contents. 
 
-## Integrating Anchore Scans in a CircleCI Build
+## Integrating Anchore scanning in a CircleCI build
 
 In the following example, we will walkthrough how to integrate Anchore scanning into a CircleCI build. 
