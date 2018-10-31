@@ -12,6 +12,8 @@ Now that we have a definition, we can start to uncover why this is necessary. In
 
 Continous Integration plays a critical role when we move to building container images as well. Container images, by nature, are immutable. Meaning, once we build an image, it is unchanged. If we want to make any changes to the application that runs inside the container, we will build another image with the code changes, and then deploy the new, updated container. This decreases development and testing time, and fits in nicely with CI. 
 
-One of the core pieces of CI is running tests automatically. When we build container images in a CI pipeline, we should employ a tool that is able to conduct the appropriate level of analysis on the build artifact. Anchore is a service that conducts static analysis on container images, and applies user-defined acceptable polices to allow automated container image validation and certification.
+One of the core pieces of CI is running tests automatically. When we build container images in a CI pipeline, we should employ a tool that is able to conduct the appropriate level of analysis on the build artifact. Anchore is a service that conducts static analysis on container images, and applies user-defined acceptable polices to allow automated container image validation and certification. This means that not only can Anchore users gain a deep insight into the OS and non-OS packages contain within an image, but they have the ability to create governence around the artifact and it's contents. 
 
+## Integrating Anchore Scans in a CircleCI Build
 
+In the following example, we will walkthrough how to integrate Anchore scanning into a CircleCI build. 
