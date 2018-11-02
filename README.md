@@ -16,4 +16,53 @@ One of the core pieces of CI is running tests automatically. When we build conta
 
 ## Integrating Anchore scanning in a CircleCI build
 
-In the following example, we will walkthrough how to integrate Anchore scanning into a CircleCI build. 
+In the following examples, we will walkthrough how to integrate Anchore scanning into a CircleCI build. 
+
+**Note** these examples leverage the anchore/anchore-engine@1.0.0 CircleCi orb:
+
+Adding a public image scan job to a CircleCi workflow:
+```
+version: 2.1
+orbs:
+  anchore-engine: anchore/anchore-engine@1.0.0
+workflows:
+  scan_image:
+    jobs:
+      - anchore/image_scan:
+          image_name: anchore/anchore-engine:latest
+          timeout: '300'
+```
+
+Adding a private image scan job to a CircleCi workflow:
+```
+version: 2.1
+orbs:
+  anchore-engine: anchore/anchore-engine@1.0.0
+workflows:
+  scan_image:
+    jobs:
+      - anchore/image_scan:
+          image_name: anchore/anchore-engine:latest
+          timeout: '300'
+          private_registry: True
+          registry_name: docker.io
+          registry_user: "${DOCKER_USER}"
+          registry_pass: "${DOCKER_PASS}"
+```
+Adding image scanning to your container build pipeline job.
+```
+version: 2.1
+orbs:
+  anchore-engine: anchore/anchore-engine@1.0.0
+jobs:
+  local_image_scan:
+    executor: anchore/anchore_engine
+    steps:
+      - checkout
+      - run:
+          name: build container
+          command: docker build -t ${CIRCLE_PROJECT_REPONAME}:ci .
+      - anchore/analyze_local_image:
+          image_name: ${CIRCLE_PROJECT_REPONAME}:ci
+          timeout: '500'
+```
