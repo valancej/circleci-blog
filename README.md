@@ -20,7 +20,7 @@ In the following examples, we will walkthrough how to integrate Anchore scanning
 
 **Note** these examples leverage the anchore/anchore-engine@1.0.0 CircleCi orb. Additionally, they require a .circleci directory and `config.yml` file.
 
-### Adding Anchore scanning of a public image scan job to a CircleCi workflow:
+### Adding Anchore scanning of a public image scan job to a CircleCi workflow
 
 Here the public image is just the anchore-engine:latest image. 
 
@@ -36,7 +36,7 @@ workflows:
           timeout: '300'
 ```
 
-### Adding Anchore scanning of a private image scan job to a CircleCi workflow:
+### Adding Anchore scanning of a private image scan job to a CircleCi workflow
 
 Here the we are connecting to a private registry and pulling the defined image. 
 
@@ -55,7 +55,7 @@ workflows:
           registry_user: "${DOCKER_USER}"
           registry_pass: "${DOCKER_PASS}"
 ```
-### Adding Anchore image scanning to your container build pipeline job.
+### Adding Anchore image scanning to your container build pipeline job
 
 Here we are building a docker image from the connected repository, and scanning the image after. 
 
