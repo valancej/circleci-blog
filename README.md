@@ -18,7 +18,7 @@ One of the core pieces of CI is running tests automatically. When we build conta
 
 In the following examples, we will walkthrough how to integrate Anchore scanning into a CircleCI build. 
 
-**Note** these examples leverage the anchore/anchore-engine@1.0.0 CircleCi orb:
+**Note** these examples leverage the anchore/anchore-engine@1.0.0 CircleCi orb. Additionally, they require a .circleci directory and `config.yml` file.
 
 Adding Anchore scanning of a public image scan job to a CircleCi workflow:
 ```
