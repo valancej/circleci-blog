@@ -57,7 +57,7 @@ workflows:
 ```
 ### Adding Anchore image scanning to your container build pipeline job
 
-Here we are building a docker image from the connected repository, and scanning the image after. 
+Here we are building a docker image from the connected repository, and scanning the image after. As part of the scan, we've added `analysis_fail: True` to the configuration. When this is set to true, the analyzed image will also be evaluated against the default policy bundle that ships with anchore-engine. Should the result of the policy evaluation fail, the pipline will fail at this step. 
 
 ```
 version: 2.1
@@ -74,4 +74,5 @@ jobs:
       - anchore/analyze_local_image:
           image_name: ${CIRCLE_PROJECT_REPONAME}:ci
           timeout: '500'
+          analysis_fail: True
 ```
