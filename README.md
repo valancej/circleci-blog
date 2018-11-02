@@ -4,7 +4,7 @@
 
 Docker gives developers the ability to streamline packaging, storage, and deployment of applications at great scale. With increased use of container technologies across software development teams, securing these images become challenging. Due to the increased flexibility and agility, security checks for these images need to be woven into an automated pipeline and become part of the development lifecycle.
 
-## Why scan with Anchore?
+## Securing container images with Anchore
 
 Continous Integration plays a critical role when we move to building container images as well. Container images, by nature, are immutable. Meaning, once we build an image, it is unchanged. If we want to make any changes to the application that runs inside the container, we will build another image with the code changes, and then deploy the new, updated container. This decreases development and testing time, and fits in nicely with CI. 
 
