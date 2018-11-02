@@ -1,12 +1,8 @@
 # CircleCI & Anchore
 
-## Why Continous Integration?
+## Introduction
 
-Before examining why container images should be scanned during a CI build, it is important to fundamentally understand what continuous integration is, and why we need it? 
-
-Martin Fowler defines continuous integration as follows: "Continous Integration is a software development practice where members of a team integrate their work frequently; usually, each person integrates at least daily... Each integration is verified by an automated build.. to detect integration erros as quickly as possible."
-
-Now that we have a definition, we can start to uncover why this is necessary. In short, we need a structured and reliable process for building, testing, and deploying software. Most often, software applications are incredibly complex and contain many moving parts. Each of these pieces contain separate features to test, separate bugs to fix, and potentially, different environments to deploy to. We can begin to see where this is going. The more structure and reliablility software development teams have to their build and testing process, the less time they will spend fixing issues, worrying about deployments, rolling back, etc.. At the risk of getting too in the weeds, by automating these moving pieces, developers are saving time by implementing at solid continuous integration pipeline.
+Docker gives developers the ability to streamline packaging, storage, and deployment of applications at great scale. With increased use of container technologies across software development teams, securing these images become challenging. Due to the increased flexibility and agility, security checks for these images need to be woven into an automated pipeline and become part of the development lifecycle.
 
 ## Why scan with Anchore?
 
