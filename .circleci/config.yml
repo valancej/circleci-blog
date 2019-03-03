@@ -6,4 +6,4 @@ workflows:
     jobs:
       - anchore/image_scan:
           image_name: 'docker.io/anchore/anchore-engine:latest'
-          timeout: '300
+          timeout: '300'
