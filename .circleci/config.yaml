@@ -1,0 +1,9 @@
+version: 2.1
+orbs:
+  anchore-engine: anchore/anchore-engine@1.2.0
+workflows:
+  scan_image:
+    jobs:
+      - anchore/image_scan:
+          image_name: anchore/anchore-engine:latest
+          timeout: '300'
