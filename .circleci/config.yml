@@ -9,10 +9,12 @@ jobs:
       - checkout
       - run:
           name: build container
-          command: docker build -t "anchore/anchore-engine:ci" .
+          command: 'docker build -t "example/test:latest" .'
       - anchore/analyze_local_image:
-          image_name: example/test:latest
+          image_name: 'example/test:latest'
           timeout: '500'
+          policy_failure: true
+          policy_bundle_file_path: .circleci/.anchore/policy_bundle.json
           dockerfile_path: ./Dockerfile
       - anchore/parse_reports
       - store_artifacts:
