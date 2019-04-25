@@ -1,6 +1,6 @@
 version: 2.1
 orbs:
-  anchore: anchore/anchore-engine@1.2.0
+  anchore: anchore/anchore-engine@1.3.0
 workflows:
   scan_image:
     jobs:
